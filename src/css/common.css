@@ -16,3 +16,60 @@ img {
   display: block;
   max-width: 100%;
 }
+
+#datetime-picker {
+  font-size: 20px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-size: 24px;
+}
+
+.value {
+  font-size: 32px;
+  color: #347ea4;
+}
+
+button[data-start] {
+  padding: 2px 12px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: #6e6767;
+  background-color: antiquewhite;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  cursor: pointer;
+  transition: background-color 350ms linear, box-shadow 350ms linear;
+}
+
+button[data-start]:hover {
+  background-color: #a6e5d1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+}
+
+button[data-start]:disabled {
+  background-color: #d7d3d3;
+  color: #b4b4b4;
+  box-shadow: none;
+}
+
+.timer-text {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0;
+  width: 100%;
+  font-size: 32px;
+}
