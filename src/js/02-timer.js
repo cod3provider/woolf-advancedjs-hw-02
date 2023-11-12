@@ -1,7 +1,7 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const elements = {
   startBtn: document.querySelector('button[data-start]'),
@@ -40,7 +40,7 @@ const options = {
 
 flatpickr(elements.datePicker, options);
 
-function handleClick () {
+function handleClick() {
   elements.startBtn.setAttribute('disabled', '');
   elements.datePicker.setAttribute('disabled', '');
 
@@ -55,19 +55,19 @@ function handleClick () {
       return;
     }
 
-    const {days, hours, minutes, seconds} = convertMs(timeLeft);
+    const { days, hours, minutes, seconds } = convertMs(timeLeft);
 
     elements.daysSpan.textContent = days;
     elements.hoursSpan.textContent = hours;
     elements.minutesSpan.textContent = minutes;
     elements.secondsSpan.textContent = seconds;
 
-    if(days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
+    if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
       clearInterval(timerId);
       elements.datePicker.removeAttribute('disabled');
       changeText();
     }
-  }, 1000)
+  }, 1000);
 }
 
 function convertMs(ms) {
@@ -85,14 +85,14 @@ function convertMs(ms) {
 }
 
 function addLeadingZero(value) {
-  return String(value).padStart(2, "0");
+  return String(value).padStart(2, '0');
 }
 
 function addText() {
-  elements.timerWrap.insertAdjacentHTML('afterbegin', '<p class="timer-text">Time left:</p>')
+  elements.timerWrap.insertAdjacentHTML('afterbegin', '<p class="timer-text">Time left:</p>');
 }
 
 function changeText() {
   const timerText = document.querySelector('.timer > .timer-text');
-  timerText.textContent = "Time's up";
+  timerText.textContent = 'Time\'s up';
 }
